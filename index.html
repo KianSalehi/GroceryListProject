@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grocery ME</title>
+    <title>Product Palace</title>
 
 </head>
 <body>
@@ -11,5 +11,40 @@
     <button class="tab_links" onclick="tab_info(event,'Products')">Products</button>
     <button class="tab_links" onclick="tab_info(event,'Cart')">Cart</button>
 </div>
+<!-- Tab content -->
+<div id="Client" class="tab_content">
+    <h3>Client Information</h3>
+    <p>Tell us a bit about you.</p>
+    <input type="checkbox" id="organic" name="organic" value=true>
+    <label for="organic">Organic Products</label><br><br>
+    Choose a Category:
+    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 'organic')">
+        <option value=""></option>
+        <option value="VegAGlu">Vegetarian and GlutenFree</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="GlutenFree">GlutenFree</option>
+        <option value="None">None</option>
+    </select>
+</div>
+
+<div id="Products" class="tab_content">
+    <h3>Your targeted products</h3>
+    <p>We preselected products based on your restrictions.</p>
+    Choose items to buy:
+    <div id="displayProduct"></div>
+    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+        Add selected items to cart.
+    </button>
+</div>
+
+<div id="Cart" class="tab_content">
+    <h3>Cart</h3>
+    <p>Here is your cart.</p>
+    <div id="displayCart"></div>
+</div>
+
+<script src="itemList.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
