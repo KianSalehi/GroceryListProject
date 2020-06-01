@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Product Palace</title>
-
+    <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
 <div class = "tab">
@@ -15,7 +15,7 @@
 <div id="Client" class="tab_content">
     <h3>Client Information</h3>
     <p>Tell us a bit about you.</p>
-    <input type="checkbox" id="organic" name="organic" value=true>
+    <input type="checkbox" id="organic" name="organic" value=true onchange="populateListProductChoices('dietSelect','displayProduct',this.id)">
     <label for="organic">Organic Products</label><br><br>
     Choose a Category:
     <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct', 'organic')">
@@ -27,7 +27,7 @@
     </select>
 </div>
 
-<div id="Products" class="tab_content">
+<div id="Products" class="tab_content" style="display: none">
     <h3>Your targeted products</h3>
     <p>We preselected products based on your restrictions.</p>
     Choose items to buy:
@@ -37,7 +37,7 @@
     </button>
 </div>
 
-<div id="Cart" class="tab_content">
+<div id="Cart" class="tab_content" style="display: none">
     <h3>Cart</h3>
     <p>Here is your cart.</p>
     <div id="displayCart"></div>

@@ -66,13 +66,24 @@ var products =[
         vegetarian: true,
         glutenFree: true,
         organic: true,
-        price: 3.00
+        price: 5.99
     }
 ];
-//With the given restrictions makes a list of products
+
+//With the given restrictions makes a list of products and orders the list
 function restrictList(product, restriction, is_organic){
+    let temp;
+    for (let i = 0; i < product.length; i++) {
+        for (let j = 0; j < product.length; j++) {
+            if (product[i].price < product[j].price) {
+                temp = product[i]
+                product[i] = product[j]
+                product[j] = temp
+            }
+        }
+    }
     let product_names = [];
-    if (is_organic == "true"){
+    if (is_organic == true){
     for (let i=0; i<product.length;i+=1){
         if ((restriction == "Vegetarian")&&(product[i].vegetarian == true)&&(product[i].organic==true)){
             product_names.push(product[i].name+" $"+product[i].price);
@@ -98,7 +109,7 @@ function restrictList(product, restriction, is_organic){
             else if ((restriction == "VegAGlu")&& (product[i].glutenFree == true)&&(product[i].vegetarian == true)){
                 product_names.push(product[i].name+" $"+product[i].price);
             }
-            else if ((restriction == "None") &&(product[i].organic==true)){
+            else if (restriction == "None"){
                 product_names.push(product[i].name+" $"+product[i].price);
             }
         }
@@ -113,6 +124,6 @@ function getTotalPrice(chosen_products){
             total_price += products[i].price;
         }
     }
-    return total_price;
+    return total_price.toFixed(2);
 }
 

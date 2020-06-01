@@ -2,37 +2,41 @@
 
 //Function called when tabs are clicked
 
-function tab_info(event,tab_name){
-    // Get all elements with class ="tabcontent" and hide them
+function tab_info(evt,tab_name){
+    // Get all elements with class ="tab_content" and hide them
     let tab_content = document.getElementsByClassName("tab_content");
-    for (i = 0; i < tab_content.length; i++){
+    for (let i = 0; i < tab_content.length; i++){
         tab_content[i].style.display = "none";
     }
 
-    //Get all elements that include class="tablinks" and remove the "active" class
+    //Get all elements that include class="tab_links" and remove the "active" class
     let tab_links = document.getElementsByClassName("tab_links");
-    for (i=0;i<tab_links.length;i++){
-        tab_links[i].className=tab_links[i].className.replace(" active","")
+    for (let i=0;i<tab_links.length;i++){
+        tab_links[i].className=tab_links[i].className.replace("active","")
     }
     // Show the current tab. and add an "active" class to the button that opened the tab
     document.getElementById(tab_name).style.display="block";
-    event.currentTarget.className += " active";
+    evt.currentTarget.className += "active";
 }
 
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
 function populateListProductChoices(slct1, slct2, is_organic) {
+    let organic
     var s1 = document.getElementById(slct1);
     var s2 = document.getElementById(slct2);
     var s3 = document.getElementById(is_organic)
-    alert(s3.value)
     // s2 represents the <div> in the Products tab, which shows the product list, so we first set it empty
     s2.innerHTML = "";
-
+    if (s3.checked==true){
+        organic = true
+    }
+    else{
+        organic = false
+    }
     // obtain a reduced list of products based on restrictions
-    var optionArray = restrictList(products, s1.value, s3.value);
-
+    var optionArray = restrictList(products, s1.value, organic);
     // for each item in the array, create a checkbox element, each containing information such as:
     // <input type="checkbox" name="product" value="Bread">
     // <label for="Bread">Bread/label><br>
@@ -84,6 +88,6 @@ function selectedItems(){
 
     // add paragraph and total price
     c.appendChild(para);
-    c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+    c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 
 }
