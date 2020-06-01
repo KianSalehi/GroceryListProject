@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/GroceryListProject.iml" filepath="$PROJECT_DIR$/.idea/GroceryListProject.iml" />
+      <module fileurl="file://$USER_HOME$/HTML-CSS-SurveyTemplate/.idea/HTML-CSS-SurveyTemplate.iml" filepath="$USER_HOME$/HTML-CSS-SurveyTemplate/.idea/HTML-CSS-SurveyTemplate.iml" />
     </modules>
   </component>
 </project>
