@@ -10,7 +10,7 @@ var products =[
         vegetarian: true,
         glutenFree: false,
         organic: false,
-        price: 2.55
+        price: 2.59
     },
     {
         name: "Apple",
@@ -24,42 +24,42 @@ var products =[
         vegetarian: false,
         glutenFree: true,
         organic: false,
-        price: 12.00
+        price: 12.99
     },
     {
         name: "Milk 1.2L",
         vegetarian: true,
         glutenFree: true,
         organic: false,
-        price: 3.00
+        price: 3.99
     },
     {
         name: "Pizza dough",
         vegetarian: true,
         glutenFree: false,
         organic: false,
-        price: 6.00
+        price: 6.99
     },
     {
         name: "Popcorn",
         vegetarian: false,
         glutenFree: true,
         organic: false,
-        price: 12.00
+        price: 12.99
     },
     {
         name: "Yogurt",
         vegetarian: true,
         glutenFree: true,
         organic:true,
-        price: 6.00
+        price: 6.99
     },
     {
         name: "Salmon",
         vegetarian: false,
         glutenFree: true,
         organic: true,
-        price: 12.00
+        price: 12.99
     },
     {
         name: "Eggs (12pcs)",

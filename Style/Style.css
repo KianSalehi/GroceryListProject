@@ -3,8 +3,8 @@
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #cccccc;
-    background-color: #f1f1f1;
+    border: 1px solid #1e4c1d;
+    background-color: #323232;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -41,4 +41,18 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+/* Style the tab links*/
+.tab_links {
+    color: #0ba309;
+    font-family: Calibri;
+}
+
+body{
+    font-family: Calibri;
+}
+
+footer{
+    font-family: Calibri;
 }
